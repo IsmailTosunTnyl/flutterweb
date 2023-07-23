@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: deploy the Docker image
-      run: cd webtest && sudo docker build -t flutterwebpage:$(date +%s) -f Dockerfile . && sudo docker run  -p 80:80 flutterwebpage:$(date +%s)
+      run: cd webtest && sudo docker stop flutterweb && sudo docker rm flutterweb &&sudo docker rmi flutterweb:latest  && sudo docker build -t flutterwebpage:$(date +%s) -f Dockerfile . && sudo docker run  -p 80:80 flutterwebpage:latest -name:flutterweb
