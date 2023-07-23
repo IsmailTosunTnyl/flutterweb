@@ -1,5 +1,5 @@
 # Use the official Flutter base image with the webdev tool installed
-FROM cirrusci/flutter:latest AS builder
+FROM ghcr.io/cirruslabs/flutter:3.10.6
 
 # Set the working directory inside the container
 WORKDIR /app
