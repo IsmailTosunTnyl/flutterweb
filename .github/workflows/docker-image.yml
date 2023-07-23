@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: ls
+      run: cd webtest && docker build . --file Dockerfile --tag flutterwebpage:$(date +%s)
