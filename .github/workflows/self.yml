@@ -1,4 +1,4 @@
-name: Deploy on Sony
+name: Docker Image CI
 
 on:
   push:
@@ -15,8 +15,8 @@ jobs:
     - name: Build and deploy the Docker image
       run: |
         cd webtest
-        sudo docker stop flutterweb
-        sudo docker rm flutterweb 
+        sudo docker stop flutterweb || true
+        sudo docker rm flutterweb || true
         sudo docker rmi flutterwebpage:latest || true
         sudo docker build -t flutterwebpage:latest -f Dockerfile .
         sudo docker run -d -p 80:80 --name flutterweb flutterwebpage:latest
