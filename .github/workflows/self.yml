@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: deploy the Docker image
-      run: cd webtest && docker build -t flutterwebpage:$(date +%s) -f Dockerfile . && docker run  -p 80:80 flutterwebpage:$(date +%s)
+      run: cd webtest && sudo docker build -t flutterwebpage:$(date +%s) -f Dockerfile . && sudo docker run  -p 80:80 flutterwebpage:$(date +%s)
